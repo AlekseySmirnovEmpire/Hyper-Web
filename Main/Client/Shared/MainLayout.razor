@@ -1,9 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
+    <NavMenu />
 
     <main>
         <div class="top-row px-4">
@@ -13,5 +11,8 @@
         <article class="content px-4">
             @Body
         </article>
+        <Div class="page-footer bg-black bg-gradient shadow-sm border-top border-warning text-light" style="position: fixed; bottom: 0; text-align: start; width:100%;">
+            <p style="margin-top: 15px; margin-left: 15px; padding: 0; font-size: 12px;">© @DateTime.Today.Year, Hyper-Web, all right reserved.</p>
+        </Div>
     </main>
 </div>

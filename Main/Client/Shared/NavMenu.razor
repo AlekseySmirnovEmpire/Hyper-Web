@@ -1,40 +1,80 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Client</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
-
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-    </nav>
-</div>
+﻿@using BlazorStrap
+<BSNavbar IsFixedTop="true" Color="BSColor.Dark" Expand="Size.Medium" class="bg-black bg-gradient shadow-sm mb-3 border-bottom border-warning">
+    <BSContainer Container="Container.Fluid">
+        <BSNavbarBrand class="text-light" Url="/">
+            <img src="img/logo.svg" width="30" height="30" alt=""/>
+            Hyper
+        </BSNavbarBrand>
+        <BSNav Justify="Justify.Center" MarginBottom="Margins.Small" Class="mb-lg-0 collapse navbar-collapse">
+            <BSNavItem IsActive="true" Url="/tournaments" Class="text-light">
+                <i class="fa fa-solid fa-trophy" style="margin-right: 5px;"></i>
+                Турниры
+            </BSNavItem>
+            <BSNavItem IsActive="true" Url="/players" Class="text-light">
+                <i class="fa fa-solid fa-users" style="margin-right: 5px;"></i>
+                Игроки
+            </BSNavItem>
+            <BSNavItem IsActive="true" Url="/rules" Class="text-light">
+                <svg style="margin-right: 5px;" width="25" height="25" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 640 512">
+                    <path fill="#fff"
+                          d="M252.3 11.7c-15.6-15.6-40.9-15.6-56.6 0l-184 184c-15.6 15.6-15.6 40.9 0 56.6l184 184c15.6 15.6 40.9 15.6 56.6 0l184-184c15.6-15.6 15.6-40.9 0-56.6l-184-184zM248 224c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24zM96 248c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm128 80c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm128-80c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zM224 72c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm96 392c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H472.5c13.4 26.9 8.8 60.5-13.6 82.9L320 413.8V464zm160-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/>
+                </svg>
+                Правила
+            </BSNavItem>
+            <BSNavItem IsActive="true" Url="/reviews" Class="text-light">
+                <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                     viewBox="0 0 512 512">
+                    <path fill="#fff"
+                          d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/>
+                </svg>
+                Статьи
+            </BSNavItem>
+        </BSNav>
+        <BSNavbarToggle @onclick="Show" class="border-0 navbar-dark"/>
+        <BSOffCanvas Color="BSColor.Dark" class="text-light" Placement="Placement.Right" ButtonClass="btn-close-white" tabindex="-1" @ref="_offCanvasRef">
+            <Header>
+                <img src="img/logo.svg" width="30" height="30" alt=""/>
+                Hyper
+            </Header>
+            <Content>
+                <BSNav Justify="Justify.End" Class="flex-grow-1" PaddingEnd="Padding.Medium">
+                    <BSNavItem IsActive="true" MarginBottom="Margins.Medium" Url="/tournaments" Class="text-light">
+                        <i class="fa fa-solid fa-trophy" style="margin-right: 5px;"></i>
+                        Турниры
+                    </BSNavItem>
+                    <BSNavItem IsActive="true" MarginBottom="Margins.Medium" Url="/players" Class="text-light">
+                        <i class="fa fa-solid fa-users" style="margin-right: 5px;"></i>
+                        Игроки
+                    </BSNavItem>
+                    <BSNavItem IsActive="true" MarginBottom="Margins.Medium" Url="/rules" Class="text-light">
+                        <svg style="margin-right: 5px;" width="25" height="25" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 640 512">
+                            <path fill="#fff"
+                                  d="M252.3 11.7c-15.6-15.6-40.9-15.6-56.6 0l-184 184c-15.6 15.6-15.6 40.9 0 56.6l184 184c15.6 15.6 40.9 15.6 56.6 0l184-184c15.6-15.6 15.6-40.9 0-56.6l-184-184zM248 224c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24zM96 248c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm128 80c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm128-80c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zM224 72c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm96 392c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H472.5c13.4 26.9 8.8 60.5-13.6 82.9L320 413.8V464zm160-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/>
+                        </svg>
+                        Правила
+                    </BSNavItem>
+                    <BSNavItem IsActive="true" MarginBottom="Margins.Medium" Url="/reviews" Class="text-light">
+                        <svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                             viewBox="0 0 512 512">
+                            <path fill="#fff"
+                                  d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/>
+                        </svg>
+                        Статьи
+                    </BSNavItem>
+                </BSNav>
+            </Content>
+        </BSOffCanvas>
+    </BSContainer>
+</BSNavbar>
 
 @code {
-    private bool collapseNavMenu = true;
+    private BSOffCanvas? _offCanvasRef;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    private async Task Show()
     {
-        collapseNavMenu = !collapseNavMenu;
+        if (_offCanvasRef != null) await _offCanvasRef.ToggleAsync();
     }
 
 }

@@ -1,0 +1,21 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="34" width="34" y="-1" x="-1"/>
+  <g wfd-invisible="true" display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="15.247488" x2="27.551715" y1="13.408409" x1="4.908051" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="15.017603" x2="26.86206" y1="30.534834" x1="16.172412" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_7" y2="31.224489" x2="16.172412" y1="13.293466" x1="5.482764" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_9" y2="11.109559" x2="15.13793" y1="10.304962" x1="5.827591" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_10" y2="12.029099" x2="27.551715" y1="11.224502" x1="17.551721" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_11" y2="0.649796" x2="8.011498" y1="10.419905" x1="6.632188" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_12" y2="1.224508" x2="29.735622" y1="11.914157" x1="26.977003" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_13" y2="10.879675" x2="14.563218" y1="1.224508" x1="8.011498" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_14" y2="1.224508" x2="29.735622" y1="11.224502" x1="18.356319" stroke-width="1.5" stroke="#ffca2d" fill="none"/>
+ </g>
+</svg>
